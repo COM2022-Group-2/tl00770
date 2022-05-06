@@ -2,7 +2,7 @@ import socket
 
 #THIS ONE IS FOR CHECKING LOCAL PC IP ADDRESS
 #UDP_IP = socket.gethostbyname(socket.gethostname())
-UDP_IP = "127.0.0.2"
+UDP_IP = "192.168.0.3"
 UDP_PORT = 1001
 
 sock = socket.socket(socket.AF_INET, # Internet
