@@ -2,7 +2,7 @@ import socket
 from datetime import datetime
 from member import memberDict
 import time
-
+from encryption import encryp
 
 #add time and condition on date match to send to specific ip for each member
 dt = datetime.today().strftime('%d/%m')
@@ -23,7 +23,7 @@ while True:
             
             sock = socket.socket(socket.AF_INET, # Internet socket
                                 socket.SOCK_DGRAM) # UDP
-            sock.sendto(MESSAGE, (UDP_IP, UDP_PORT)) #send message to specific ip and port
+            sock.sendto(encryp(MESSAGE), (UDP_IP, UDP_PORT)) #send message to specific ip and port
 
             print("UDP target IP: %s" % UDP_IP)
             print("UDP target port: %s" % UDP_PORT)
