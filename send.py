@@ -1,6 +1,6 @@
 import socket
 from datetime import datetime
-from member import memberDict
+from clients import memberDict
 import time
 from encryption import encryp
 
