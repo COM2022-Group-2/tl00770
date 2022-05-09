@@ -2,11 +2,26 @@ import socket
 from datetime import datetime
 from clients import memberDict
 import time
-from encryption import encryp
 
 #add time and condition on date match to send to specific ip for each member
 dt = datetime.today().strftime('%d/%m')
+s= 4
+def encryp(MESSAGE, s):
+   # transverse the plain text
+    for i in range(len(MESSAGE)):
+        char = MESSAGE[i]
+        # Encrypt uppercase characters in plain text
+        
+        if (char.isupper()):
+            MESSAGE += chr((ord(char) + s-65) % 26 + 65)
+        # Encrypt lowercase characters in plain text
+        else:
+            MESSAGE += chr((ord(char) + s - 97) % 26 + 97)
+            encryptedMsg = MESSAGE
+    return encryptedMsg'
 
+MESSAGE = "Well done!"
+print(encryp(MESSAGE, s))
 #this will run the code repeatedly with fixed time
 starttime = time.time()
 while True:
